@@ -12,3 +12,19 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+//Усі елементи галереї повинні додаватися в DOM за одну операцію додавання.
+//Додай мінімальне оформлення галереї флексбоксами або грідами через CSS класи.
+
+const galleryRef = document.querySelector('.gallery');
+
+const liEl = images.map(
+  image => `<li> <img class="picture" scr=${image.url} alt="${image.alt}" width="300" height="300"></li>`)
+.join('');
+
+//console.log(liEl);
+
+galleryRef.insertAdjacentHTML('beforeend', liEl);
+
+const pictureEl = galleryRef.querySelectorAll('.picture');
+
